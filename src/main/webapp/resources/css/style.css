@@ -1,0 +1,125 @@
+::-webkit-scrollbar{
+    width: 3px;
+}
+::-webkit-scrollbar-thumb{
+    border: 1px solid #FF4500;
+    background-color: #FF4500;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #ededed;
+}
+.center{
+    text-align: center;
+    margin: 0 auto;
+}
+.title{
+    font-size:50px;
+}
+.medium-size{
+    font-size:36px;
+}
+.link-button{
+    font: inherit;
+    padding: 5px 15px 5px 15px;
+    background-color: #ededed;
+    border: 1px solid #808080;
+    outline: none;
+    transition: 1s;
+    font-size: 25px;
+}
+.link-button:hover{
+    border-color: #FF4500;
+}
+.link-button::selection{
+    background: #ededed;
+    color: #FF4500;
+}
+.link-button:active{
+    border-color: #32CD32;
+}
+.panel{
+    margin-top: 25px;
+}
+div::-webkit-selection{
+    background: #ededed;
+    color: #FF4500;
+}
+div::selection{
+    background: #ededed;
+    color: #FF4500;
+}
+.text-input{
+   	padding-left: 10px;
+   	height: 30px;
+   	width: 240px;
+    font: inherit;
+    font-size: 24px;
+    border: none;
+    border-bottom: 2px solid #808080;
+    background-color: #ededed;
+}
+.text-input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #FF4500;
+}
+.text-input::selection{
+    background: #ededed;
+    color: red;
+}
+a{
+    text-decoration: none;
+    color: #FF4500;
+}
+.content{
+    padding: 20px 40px 0px 40px;
+    text-align: center;
+    margin-left: 120px;
+}
+.contentBox{
+    width: 25%;
+    border: 1px solid #32CD32;
+    border-radius: 10px;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.contentBoxTitle{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: #32CD32;
+}
+.groupData, .artistData, .songData{
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+.pageContent{
+    width: 90%;
+    margin: 0 auto;
+}
+.label{
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 25px;
+    font-weight: bolder;
+}
+.dataItem{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.large-input{
+    width: 750px;
+}
+.search-button{
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+.search-result{
+    font-size: 25px;
+}

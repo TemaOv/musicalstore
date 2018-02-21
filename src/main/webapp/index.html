@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="resources/js/indexScript.js"></script>
+    <script src="resources/js/queries.js"></script>
+    <title>Music</title>
+</head>
+<body>
+    <div class="center title">Musical Wiki</div>
+    <div class="center">Like Wikipedia only better</div>
+    <hr/>
+    <div class="center panel" id="searchComponents">
+        <input type="text" class="text-input large-input" placeholder="What do you want to find?" id="search">
+        <button class="link-button search-button" onclick="search();">Search</button>
+    </div>
+    <div class="content" id="defaultContent">
+        <div class="contentBox">
+            <div class="contentBoxTitle">
+                Groups
+            </div>
+            <div id="groupsContent">
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="contentBoxTitle">
+                Artists
+            </div>
+            <div id="artistsContent">
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="contentBoxTitle">
+                Songs
+            </div>
+            <div id="songsContent">
+            </div>
+        </div>
+    </div>
+    <div id="searchContent">
+        <div class="center title">
+            <hr/>Search results<hr/>
+        </div>
+        <div id="searchResults" class="center">
+        </div>
+    </div>
+</body>
+</html>
