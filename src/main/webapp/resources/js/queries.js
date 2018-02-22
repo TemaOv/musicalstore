@@ -30,6 +30,17 @@ function getLabelQuery(uri) {
 	return	getQueryUrl(query);
 }
 
+function getSeeAlsoQuery(uri) {
+  var query = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\
+              PREFIX music: <http://localhost:8080/music/resources/xml/ontology#>\
+              PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\
+              SELECT ?pred ?obj \
+              WHERE { \
+              <" + uri + "> rdfs:seeAlso ?obj.\
+              }";
+  return getQueryUrl(query)
+}
+
 var queryGetGroups = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\
                       PREFIX music: <http://localhost:8080/music/resources/xml/ontology#>\
                       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\

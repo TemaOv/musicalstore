@@ -54,6 +54,28 @@ $(document).ready(function () {
     			break;
     	}
     }
+
+    $.ajax({
+        type: "POST",
+        url: getSeeAlsoQuery(currentURI),
+        async: false,
+        success: function (response) {
+            var seeAlsoResults = response["results"]["bindings"];
+            if (seeAlsoResults.length == 0) {
+                return;
+            }
+            $("#content").append("<hr/>\n");
+            $("#content").append("<div class=\"dataItem\"> See also : </div>\n");
+            for (var i = 0; i < seeAlsoResults.length; i++) {
+                $("#content").append("<div class=\"dataItem\">\
+                                        <a href=\"" + getSeeAlsoURI(seeAlsoResults[i]) + "\"> " + getSeeAlsoURI(seeAlsoResults[i]) + "</a> \
+                                      </div>\n");    
+            }
+        },
+        error: function (e) {
+            console.log("ERROR : ", e);
+        }
+    });
 });
 
 function parseAllLiterals(items) {
@@ -125,6 +147,10 @@ function getLinkName(item) {
 function getLabelFromURI(){
 	var uri = window.location.href;
 	return uri.substring(uri.indexOf("#") + 1);
+}
+
+function getSeeAlsoURI(item){
+    return item["obj"]["value"];
 }
 
 function findAllItemsWithType(items, type) {

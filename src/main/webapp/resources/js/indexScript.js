@@ -1,10 +1,15 @@
+var solrEndPoint = "http://localhost:8983/solr/music_core/select?";
+
 $(document).ready(function () {
     $("#searchContent").css("display", "none");
     $("#searchComponents").css("display", "none");
 
     $.ajax({
         type: "GET",
-        url: "http://localhost:8983/solr/music_core/select?",
+        url: solrEndPoint + "q=*:*&wt=json&json.wrf=callback",
+        crossDomain: true,
+        dataType:'jsonp',
+        jsonpCallback: 'callback',
         success: function (data) {
             console.log("Solr core online.");
             $("#searchComponents").css("display", "block");
@@ -71,10 +76,13 @@ function search() {
         return;
     }
 
-    var requestString = "http://localhost:8983/solr/music_core/select?q=" + searchString;
+    var requestString = solrEndPoint + "q=content:" + searchString + "&wt=json&json.wrf=callback";
     $.ajax({
         type: "GET",
         url: requestString,
+        crossDomain: true,
+        dataType:'jsonp',
+        jsonpCallback: 'callback',
         success: function (data) {
             //var json = JSON.parse(data);
             var json = data;
